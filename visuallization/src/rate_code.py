@@ -20,11 +20,11 @@ from os import listdir
 
 data = list()
 count = 0
-for line in open("/Users/dengziming/Downloads/green_tripdata_2016-01.csv"):
+for line in open("/Users/dengziming/ideaspace/hongya/taxi_data/visuallization/trip_data_8.txt"):
 
     split = line.split(",")
-    if len(split) >= 5 and count > 0:
-        data.append(int(split[4]))
+    if len(split) >= 4 and count > 0:
+        data.append(int(split[3]))
     count += 1
 
 num_bins = 3

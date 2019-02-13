@@ -29,7 +29,10 @@ case class Trip(
 object RunGeoTime extends Serializable {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().master("local[2]").getOrCreate()
+
+    val spark = SparkSession.builder()
+      .config("spark.testing.memory",2048000000L)
+      .master("local[2]").getOrCreate()
     import spark.implicits._
 
 
